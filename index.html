@@ -130,16 +130,41 @@ img,video,canvas,svg{max-width:100%;max-height:100%}
    그림이 주인공. 흰 배경 그림이라 크림색 종이 받침 위에 올려 대비를 살림
    ========================================================= */
 .s2-body{display:flex;gap:44px;margin-top:34px;align-items:stretch;min-height:0}
-.plate{background:var(--cream);border-radius:14px;padding:22px 26px;
-  box-shadow:0 18px 60px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;
-  overflow:hidden}
-.plate img{width:100%;height:100%;object-fit:contain;display:block}
+.plate{
+  background: var(--cream);
+  border-radius: 14px;
+  padding: 0; /* 기존 22px 26px 여백을 0으로 제거 */
+  box-shadow: 0 18px 60px rgba(0,0,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.plate img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 또는 fill (비율 무시하고 딱 맞춤) */
+  display: block;
+}
 
 .s2-left{flex:0 0 900px;height:582px}
 .s2-right{flex:1;display:flex;flex-direction:column;gap:24px;min-width:0}
 
 /* 화학반응식 한 줄. 가로로 긴 그림이라 높이를 낮게 잡음 */
-.eq-plate{flex:none;height:118px;padding:14px 20px}
+.eq-plate{
+  flex: none;
+  height: 118px;
+  padding: 14px 20px;
+  background: #ffffff; /* 크림색 대신 깔끔한 흰색 적용 */
+}
+
+.eq-plate img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 
 /* 핵심 포인트 카드 2장 */
 .pt{border:1px solid var(--line);border-left:4px solid var(--lime);border-radius:10px;
